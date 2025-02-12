@@ -1,0 +1,17 @@
+name: My First Workflow
+
+on: push  # This workflow will run on every push
+          
+jobs:     # A workflow run is made up of one or more jobs that can run sequentially or in parallel
+   first-job:  # This job is named first-job 
+        runs-on: ubuntu-latest  # This job runs on the latest version of Ubuntu
+        steps:  # A job consists of an ordered list of steps
+        - name: Welcome message
+          run: echo "Welcome to GitHub Actions"
+
+        - name: List files
+          run: ls -a
+          
+        - name: Read the file
+          run: cat README.md  
+            
