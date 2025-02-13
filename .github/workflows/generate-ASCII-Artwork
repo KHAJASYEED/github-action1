@@ -1,6 +1,6 @@
 name: Generate ASCII Artwork
 
-on: push
+on: wokflow_dispatch
 
 jobs:     # A workflow run is made up of one or more jobs that can run sequentially or in parallel
    first-job:  # This job is named first-job 
