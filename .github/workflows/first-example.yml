@@ -9,14 +9,14 @@ jobs:     # A workflow run is made up of one or more jobs that can run sequentia
         - name: checkout Repo
           uses: actions/checkout@v4
 
-        - name: Welcome message
-          run: echo "Welcome to GitHub Actions"
+        # - name: Welcome message
+        #   run: echo "Welcome to GitHub Actions"
 
-        - name: List files
-          run: ls -a
+        # - name: List files
+        #   run: ls -a
           
-        - name: Read the file
-          run: cat README.md  
+        # - name: Read the file
+        #   run: cat README.md  
             
  # notes: Run cat README.md
 #cat: README.md: No such file or directory
@@ -26,5 +26,17 @@ jobs:     # A workflow run is made up of one or more jobs that can run sequentia
     # To access the files in the repository, we need to checkout the repository.
     # We can do this by adding the following step to the job. 
     # we can find actions in the GitHub Actions Marketplace website. 
+
+    # in previous steps we are using three commoands, Now we can use as 1 command.
+
+        - name: List and Read the file
+          run: |
+             echo "These Actions are to Execute Multiple commands"
+             ls -a
+             cat README.md
+
+    # Adding another step to Execute 3rd party library   
+        - name: Generate ASCII Artwork
+          run: cowsay -f dragon "Run for cover, I am a DRAGON.... RAWR" >> dragon.txt      
 
          
