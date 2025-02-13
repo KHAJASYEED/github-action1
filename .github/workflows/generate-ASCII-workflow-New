@@ -12,7 +12,7 @@ jobs:
         - name: Install httpd
           run: |
             sudo apt install httpd -y
-            echo "Httpd is Installed"
+            echo "Httpd is Installed" 
 
         - name: Install cowsay programe
           run: sudo apt install cowsay -y
