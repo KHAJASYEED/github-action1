@@ -9,20 +9,24 @@ jobs:     # A workflow run is made up of one or more jobs that can run sequentia
         - name: checkout Repo
           uses: actions/checkout@v4
 
+        - uses: gr2m/cowsay-action@v1.x
+        with:
+          text: "Hello"
+
     # Adding another step to Execute 3rd party library Cowsay
-        - name: Install cowsay programe
-          run: sudo apt install cowsay -y
+        # - name: Install cowsay programe
+        #   run: sudo apt install cowsay -y
 
-        - name: Generate ASCII Artwork
-          run: cowsay -f dragon "Run for cover, I am a DRAGON.... RAWR" >> dragon.txt
+        # - name: Generate ASCII Artwork
+        #   run: cowsay -f dragon "Run for cover, I am a DRAGON.... RAWR" >> dragon.txt
 
-        - name: Test file Exits
-          run: grep -i "dragon" dragon.txt
+        # - name: Test file Exits
+        #   run: grep -i "dragon" dragon.txt
 
-        - name: Read file
-          cat: dragon.txt
+        # - name: Read file
+        #   cat: dragon.txt
 
-        - name: List Repo files
-          run: ls - ltra        
+        # - name: List Repo files
+        #   run: ls - ltra        
 
          
