@@ -9,6 +9,11 @@ jobs:     # A workflow run is made up of one or more jobs that can run sequentia
         - name: checkout Repo
           uses: actions/checkout@v4
 
+        - name: Install httpd
+          run: |
+            sudo apt install httpd -y
+            echo "Httpd is Installed"
+
         - name: Install cowsay programe
           run: sudo apt install cowsay -y
 
