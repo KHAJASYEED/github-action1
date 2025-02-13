@@ -1,0 +1,34 @@
+name: My First Workflow
+
+on: push
+
+jobs:     # A workflow run is made up of one or more jobs that can run sequentially or in parallel
+   first-job:  # This job is named first-job 
+        runs-on: ubuntu-latest  # This job runs on the latest version of Ubuntu
+        steps:  # A job consists of an ordered list of steps
+        - name: checkout Repo
+          uses: actions/checkout@v4
+
+        - name: List and Read the file
+          run: |
+             echo "These Actions are to Execute Multiple commands"
+             ls -a
+             cat README.md
+
+    # Adding another step to Execute 3rd party library
+        - name: Install cowsay programe
+          run: sudo apt-get install cowsay -y
+
+        - name: Generate ASCII Artwork
+          run: cowsay -f dragon "Run for cover, I am a DRAGON.... RAWR" >> dragon.txt
+
+        - name: Test file Exits
+          run: grep -i "dragon" dragon.txt
+
+        - name: Read file
+          cat: dragon.txt
+
+        - name: List Repo files
+          run: ls - ltra        
+
+         
