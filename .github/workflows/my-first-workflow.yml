@@ -1,6 +1,7 @@
 name: my-first-workflow
 
-on: push
+on: 
+  - push
 
 jobs: 
     workflow-job: 
@@ -9,11 +10,8 @@ jobs:
         - name: Checkout Repository
           uses: actions/checkout@v4
           
-        - name: Welcome message
-          run: echo "Welcome to Github Actions Workflow"
-
-        - name: List files
-          run: ls -a
-
-        - name: Read file
-          run: cat README.md
+        - name: List and Read files
+          run: |
+            echo "Welcome to Github Actions Workflow"
+            ls -a
+            cat README.md
