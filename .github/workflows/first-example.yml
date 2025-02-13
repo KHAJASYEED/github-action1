@@ -1,6 +1,6 @@
 name: My First Workflow
 
-on: push  # This workflow will run on every push
+on: workflow_dispatch  # This workflow will run on every push
           
 jobs:     # A workflow run is made up of one or more jobs that can run sequentially or in parallel
    first-job:  # This job is named first-job 
