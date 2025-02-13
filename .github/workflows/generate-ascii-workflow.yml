@@ -5,19 +5,39 @@ on:
   - push
   
 jobs:
-    execute-shell-script: 
+    build_job_1: 
         runs-on: ubuntu-latest
         steps:
         - name: Checkout Repository
           uses: actions/checkout@v4
        
+        - name: Install cowsay program
+          run: sudo apt install cowsay -y
+
+        - name: Execute cowsay command
+          run: cowsay -f dragon "Run for cover, I am a DRAGON....RAWR" >> dragon.txt
+          
+        - name: Sleep for 30 seconds
+          run: sleep 30
+          
         - name: List files
           run: ls -ltra
           
-        - name: Give permission to script, Execute script
-          run:  ./ascii-script.sh
+    test_job_2: 
+        runs-on: ubuntu-latest
+        steps:
+          - name: Test file Exits
+            run: grep -i "dragon" dragon.txt
+
+    deploy_job_1:
+        runs-on: ubuntu-latest
+        steps: 
+          - name: Read file
+            run: cat dragon.txt
             
-            
+          - name: Deploy
+            run: echo "Deploying........"  
+          
             
        
          
