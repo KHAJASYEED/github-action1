@@ -1,4 +1,6 @@
-# needs syntax should be given at Job level
+# needs syntax should be given at Job level.
+# How to Upload the Artifact, And Download the Artifact.
+# In this commit we Added Upload and Download Artifact Syntax, pls take a look once.
 name: Build Test Deploy
 
 on: 
@@ -16,9 +18,12 @@ jobs:
 
         - name: Execute cowsay command
           run: cowsay -f dragon "Run for cover, I am a DRAGON....RAWR" >> dragon.txt
-          
-        - name: Sleep for 30 seconds
-          run: sleep 30
+
+        - name: Upload the Artifact  
+          uses: actions/upload-artifact@v4
+          with:
+            name: dragon-text.txt
+            path: dragon.txt
           
         - name: List files
           run: ls -ltra
@@ -27,6 +32,11 @@ jobs:
         needs: build_job_1
         runs-on: ubuntu-latest
         steps:
+          - name: Download the Artifact  
+            uses: actions/download-artifact@v4
+            with:
+              name: dragon-text.txt
+
           - name: Test file Exits
             run: grep -i "dragon" dragon.txt
 
@@ -34,6 +44,11 @@ jobs:
         needs: test_job_2
         runs-on: ubuntu-latest
         steps: 
+          - name: Download the Artifact  
+            uses: actions/download-artifact@v4
+            with:
+              name: dragon-text.txt
+
           - name: Read file
             run: cat dragon.txt
             
