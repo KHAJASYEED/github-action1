@@ -9,9 +9,8 @@ jobs:     # A workflow run is made up of one or more jobs that can run sequentia
         - name: checkout Repo
           uses: actions/checkout@v4
 
-        - uses: gr2m/cowsay-action@v1.x
-        with:
-          text: "Hello"
+        - name: Install cowsay programe
+          run: sudo apt install cowsay -y
 
     # Adding another step to Execute 3rd party library Cowsay
         # - name: Install cowsay programe
