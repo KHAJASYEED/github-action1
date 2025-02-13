@@ -39,4 +39,5 @@ jobs:     # A workflow run is made up of one or more jobs that can run sequentia
         - name: Generate ASCII Artwork
           run: cowsay -f dragon "Run for cover, I am a DRAGON.... RAWR" >> dragon.txt      
 
-         
+    # Run cowsay -f dragon "Run for cover, I am a DRAGON.... RAWR" >> dragon.txt
+    # line 1: cowsay: command not found, in this step the command is not found.      
