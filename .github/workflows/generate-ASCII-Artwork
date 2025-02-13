@@ -1,4 +1,4 @@
-name: My First Workflow
+name: Generate ASCII Artwork
 
 on: push
 
@@ -8,12 +8,6 @@ jobs:     # A workflow run is made up of one or more jobs that can run sequentia
         steps:  # A job consists of an ordered list of steps
         - name: checkout Repo
           uses: actions/checkout@v4
-
-        - name: List and Read the file
-          run: |
-             echo "These Actions are to Execute Multiple commands"
-             ls -a
-             cat README.md
 
     # Adding another step to Execute 3rd party library Cowsay
         - name: Install cowsay programe
