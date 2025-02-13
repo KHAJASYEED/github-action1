@@ -15,7 +15,7 @@ jobs:
           run: ls -ltra
           
         - name: Give permission to script, Execute script
-          run: ./install-httpd.sh
+          run: sh install-httpd.sh
             
             
             
