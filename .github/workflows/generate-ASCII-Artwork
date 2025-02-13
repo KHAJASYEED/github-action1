@@ -15,9 +15,9 @@ jobs:     # A workflow run is made up of one or more jobs that can run sequentia
              ls -a
              cat README.md
 
-    # Adding another step to Execute 3rd party library
+    # Adding another step to Execute 3rd party library Cowsay
         - name: Install cowsay programe
-          run: sudo apt-get install cowsay -y
+          run: sudo apt install cowsay -y
 
         - name: Generate ASCII Artwork
           run: cowsay -f dragon "Run for cover, I am a DRAGON.... RAWR" >> dragon.txt
