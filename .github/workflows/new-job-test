@@ -1,0 +1,18 @@
+name: Generate ASCII Artwork
+
+on: [push, workflow_dispatch]
+
+jobs:     
+   ASCII-job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: checkout Repo
+          uses: actions/checkout@v4
+
+        - name: Install httpd
+          run: |
+            sudo apt install httpd -y
+            echo "Httpd is Installed" 
+
+        - name: Install cowsay programe
+          run: sudo apt install cowsay -y
