@@ -5,7 +5,7 @@
 # An other option is "max-parllel", so if you want to control the number of jobs can run simuntaniously, using this strategy. 
 
 
-name: Using exclude, fail-fast, max-parallel strategy
+name: Using exclude, include, fail-fast, max-parallel strategy
 
 on: [push, workflow_dispatch]
 
@@ -20,6 +20,9 @@ jobs:
         exclude:
           - images: alpine
             os: windows-latest
+        include:
+          - images: amd64/alpine
+            os: ubuntu-20.04 
         
     runs-on: ${{ matrix.os }}
     steps: 
