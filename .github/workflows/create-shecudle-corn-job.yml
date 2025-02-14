@@ -2,7 +2,7 @@ name: schedule corn job
 
 on: 
   schedule:
-    - cron:  "*/1 * * * *" 
+    - cron:  "* * * * *" 
 
 env: 
   CONTAINER_REGISTRY: docker.io
