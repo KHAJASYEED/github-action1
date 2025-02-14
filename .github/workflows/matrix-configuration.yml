@@ -1,16 +1,25 @@
-#
-#
+# I dont want alpine immage execute on the Windows machine.
+# "fail-fast" by default it is true, it is going to cancel any job which are runing or in queue, when a job fails. But
+# You can also disable it by using "false" boolean value. we can use it under strategy action.
 
-name: Matrix configuration
+# An other option is "max-parllel", so if you want to control the number of jobs can run simuntaniously, using this strategy. 
+
+
+name: Using exclude, fail-fast, max-parallel strategy
 
 on: [push, workflow_dispatch]
 
 jobs:
   deploy: 
-    strategy:
+    strategy: 
+      fail-fast: false
+      max-parallel: 2
       matrix: 
         os: [ubuntu-latest, ubuntu-20.04, windows-latest]
         images: [hello-world, alpine]
+        exclude:
+          - images: alpine
+            os: windows-latest
         
     runs-on: ${{ matrix.os }}
     steps: 
