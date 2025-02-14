@@ -7,7 +7,7 @@ on: [push, workflow_dispatch]
 
 jobs:
   deploy-on-ubuntu:
-    runs-on: ububuntu-latest
+    runs-on: ubuntu-latest
 
     steps: 
       - name: Echo docker detais
@@ -17,7 +17,7 @@ jobs:
         run: docker run hello-world 
         
   deploy-on-windows: 
-    runs-on: windwindows-latest
+    runs-on: windows-latest
     
     steps: 
       - name: Echo docker detais
