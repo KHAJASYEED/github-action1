@@ -2,7 +2,7 @@
 # if the workflow is terminated, if it does not completed within the specific timeout period. 
 
 
-name: concurrency job
+name: timeout option job
 
 on: 
   workflow_dispatch: 
