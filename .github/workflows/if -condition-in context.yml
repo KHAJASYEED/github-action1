@@ -2,7 +2,7 @@
 # creating new branch named feature/testing. 
 
 
-name: using if condition in context
+name: if condition-in-context
 
 on: push
 
