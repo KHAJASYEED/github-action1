@@ -33,22 +33,7 @@ env:
 jobs:  
   docker-build: 
     runs-on: ubuntu-latest
-    steps:
-     - name: docker build
-       run: echo docker build -t ${{ env.CONTAINER_REGISTRY }}/${{ vars.DOCKER_USERNAME }}/$IMAGE_NAME:latest
-
-     - name: docker login
-       run: echo docker login --username ${{ vars.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }}
-
-     - name: docker push/publish
-       run: echo docker push ${{ env.CONTAINER_REGISTRY }}/${{ vars.DOCKER_USERNAME }}/$IMAGE_NAME:latest
-
-  deploy: 
-    if: github.ref == 'refs/heads/main' 
-    needs: docker-build
-    runs-on: ubuntu-latest
-    steps:
-     - name: deploy
-       run: echo docker run -d -p 8080:80 ${{ env.CONTAINER_REGISTRY }}/${{ vars.DOCKER_USERNAME }}/$IMAGE_NAME:latest
+    steps: 
+      - run: echo this workflow/job/step is executed for event type - ${{ github.event_name }} 
              
 
