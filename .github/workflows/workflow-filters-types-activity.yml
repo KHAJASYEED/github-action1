@@ -22,8 +22,7 @@ on:
           - main     # configure your workflow to only run on pull request that target specific branch.    
 
 
-          
-
+        
 
 env: 
   CONTAINER_REGISTRY: docker.io
