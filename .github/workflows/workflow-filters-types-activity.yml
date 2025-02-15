@@ -8,7 +8,7 @@ on:
         - main           # it triggers the workkflow, if there is apush to the main branch.
         - '!feature/*'   # ignoreing push to any branch name starting with feature using !
    # schedule:        
-   # workflow_dispatch: 
+    workflow_dispatch: 
 
     pull_request: 
         types: 
