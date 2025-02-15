@@ -1,4 +1,5 @@
 # here we have 2 jobs, build and deploy, we want to deploy the job. Only when the branch is main.
+# creating new branch named feature/testing.
 
 
 name: using if condition in context
